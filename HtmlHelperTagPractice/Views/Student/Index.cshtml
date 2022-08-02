@@ -1,0 +1,25 @@
+﻿@model List<HtmlHelperTagPractice.Models.Students>
+<table class="table table-striped">
+    <thead>
+        Students
+    </thead>
+    <tbody>
+        <tr>
+            <th>Name</th>
+            <th>Branch</th>
+            <th>Section</th>
+            <th>Gender</th>
+            <th>Operations</th>
+        </tr>
+        @foreach(var stu in Model)
+        {
+            <tr>
+                <td>@stu.Name</td>
+                <td>@stu.Branch</td>
+                <td>@stu.Section</td>
+                <td>@stu.Gender</td>
+                <td> <a asp-controller="Student" asp-action="Delete" asp-route-id="@stu.Id">Delete</a>| <a asp-controller="Student" asp-action="Edit" asp-route-id="@stu.Id">Edit</a>|<a asp-controller="Student" asp-action="Details" asp-route-id="@stu.Id">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
